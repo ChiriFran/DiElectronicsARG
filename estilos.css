@@ -1,0 +1,638 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 65vh;
+    background-color: #0c0c0c;
+    background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%23ececec' fill-opacity='0.04' fill-rule='evenodd'/%3E%3C/svg%3E");
+
+    font-family: 'Ysabeau SC', sans-serif;
+}
+
+section{
+    max-width: 100%;
+}
+
+.btn-wsp {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    line-height: 63px;
+    bottom: 25px;
+    right: 25px;
+    background: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    transition: all 300ms ease;
+}
+
+.btn-wsp:hover {
+    background: #20ba5a;
+}
+
+#webBrand {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(251, 251, 251);
+}
+
+#heroContainer {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -10;
+}
+
+#webBrand h1 {
+    font-size: 1.8em;
+    font-family: 'Dancing Script', sans-serif;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+
+#userInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 50vh;
+
+    color: rgb(226, 226, 226);
+
+    overflow: hidden;
+}
+
+#userImg {
+    width: 80px;
+    height: 90px;
+    background-image: url(media/img/apple.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 3rem;
+    border-radius: 100%;
+    transition: .3s;
+
+    animation: logoSlide 2s 1 ease;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes logoSlide {
+    0%{
+        scale: 0;
+        filter: blur(0.3rem);
+    }
+    100%{
+        scale: 1.6;
+        filter: blur(0.0);
+    }
+}
+
+#userInfo ul{
+    list-style: none;
+    display: inline;
+    flex-flow: column wrap;
+}
+
+#userInfo h2 {
+    font-size: 1.5em;
+    margin: 30px 0 20px;
+    letter-spacing: 2px;
+
+    animation: tittleSlide 1.5s 1 ease-in-out;
+    animation-fill-mode: forwards;
+    
+}
+
+@keyframes tittleSlide {
+    0%{
+        transform: translateX(-500px);
+        filter: blur(1.5rem);
+    }
+    100%{
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+#userInfo h3 {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin: 0 5px 0 30px;
+
+    font-size: 0.8em;
+    letter-spacing: 2px;
+
+    animation: textSlide 1.5s 1 ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes textSlide {
+    from{
+        transform: translateX(-400px);
+        filter: blur(1.5rem);
+    }
+    to{
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+#contact {
+    background-color: #0c0c0c;
+    background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%23ececec' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
+    border-radius: 5px;
+    margin: 8vh 10px 25vh;
+    border: 2px solid rgba(255, 254, 254, 0.7);
+}
+
+#contact ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+#contact ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#contact img {
+    width: 60px;
+    height: 60px;
+}
+
+#contact h2 {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+
+    color: #fff;
+    font-size: 1.5em;
+}
+
+#contact h3 {
+    color: #fff;
+    font-size: 1em;
+    padding: 0 15px;
+
+}
+
+#flechaSvg{
+    width: 45px;
+    height: 50px;
+    padding: 3px 3px;
+}
+
+.indicadorFlecha{
+    width: 47px;
+    height: 55px;
+    position: absolute;
+    top: 87.5vh;
+    left: 2rem;
+}
+
+.glassContainer{
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+#mediosDePago{
+    color: #f3f3f3;
+    font-size: 0.5em;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin: -7rem 0 10rem;
+}
+
+.igContact{
+    width: 80%;
+    margin: 0 auto;
+    height: 26vh;
+    margin-bottom: 10vh;
+
+    z-index: 1000;
+}
+
+.glassContainerIg{
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    margin-top: -15vh;
+    
+    z-index: -10;
+}
+
+.igContact h2{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    color: #ffffff;
+    font-size: 0.8em;
+    letter-spacing: 2px;
+    padding: 5px 5px 15px 10px;
+    z-index: 10;
+}
+
+.igContact img{
+    display: flex;
+    flex-flow: column wrap;
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+}
+
+#productsContainer {
+    display: block;
+    width: 100%;
+    height: 90svh;
+    margin-top: 3rem;
+
+    color: #f3f3f3;
+}
+
+.productItem {
+    width: 80%;
+    height: 420px;
+    margin: 50px auto;
+}
+
+.glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.productItem h2 {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.productItem img {
+    display: flex;
+    flex-flow: column wrap;
+    margin: 2rem auto;
+    border-radius: 10px;
+}
+
+.productImg {
+    width: 200px;
+    height: 220px;
+}
+
+.productItem a{
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 5px;
+
+    width: 100px;
+    height: 50px;
+
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    
+}
+
+.productItem h2{
+    text-decoration: none;
+    color: #f3f3f3;
+    font-size: 1em;
+    letter-spacing: 2px;
+    font-weight: 900;
+    padding: 0;
+    border: none;
+}
+
+#footerContainer {
+    display: flex;
+    margin-top: 20rem;
+}
+
+#footerContainer h1 {
+    color: rgb(157, 157, 157);
+    font-family: 'Dancing Script', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    display: flex;
+    margin: 30rem auto 12vh;
+
+    transform: rotate(-14deg);
+}
+
+@media (min-width: 380px) {
+
+    .btn-wsp {
+        width: 63px;
+        height: 63px;
+        line-height: 66px;
+    }
+
+    #webBrand h1 {
+        font-size: 2.4em;
+    }
+
+    #userImg {
+        width: 100px;
+        height: 110px;
+        margin-top: 5rem;
+        filter: blur(0.5rem);
+    }
+
+    #userInfo h2 {
+        font-size: 2em;
+    }
+
+    @keyframes tittleSlide {
+        from{
+            transform: translateX(-600px);
+            filter: blur(1.5rem);
+        }
+        to{
+            transform: translateX(0);
+            filter: blur(0);
+        }
+    }
+    
+    #userInfo h3{
+        animation: textSlide 1.5s 1 ease-in-out;
+        animation-fill-mode: forwards;
+
+    }
+    
+    @keyframes textSlide {
+        from{
+            transform: translateX(-550px);
+            filter: blur(1.5rem);
+        }
+        to{
+            transform: translateX(0);
+            filter: blur(0);
+        }
+    }
+
+    #heroContainer img {
+        height: 150vh;
+    }
+
+    #contact {
+        margin: 15vh 10px 25vh;
+    }
+
+    #contact ul li {
+        padding: 0 18px;
+    }
+
+    #contact h2 {
+        font-size: 1.6em;
+    }
+
+    #contact h3 {
+        font-size: 1.2em;
+    }
+
+    #flechaSvg{
+        width: 60px;
+        height: 65px;
+        padding: 5px 5px;
+    }
+    
+    .indicadorFlecha{
+        width: 60px;
+        height: 65px;
+        position: absolute;
+        top: 90vh;
+        left: 2rem;
+    }
+
+    #mediosDePago{
+        font-size: 0.5em;
+        margin: -11rem 0 10rem;
+    }
+
+    .glassContainerIg{
+        margin-top: -8vh;
+    }
+
+    .igContact h2{
+        font-size: 1.2em;
+        padding: 10px 25px;
+    }
+
+    #igLogoWhite{
+        width: 50px;
+        height: 50px;
+    }
+    
+    .glassContainer{
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+
+    #productsContainer {
+        margin-top: 0;
+    }
+
+    #footerContainer {
+        margin-top: 30rem;
+        margin-bottom: 3rem;
+    }
+
+    #footerContainer h1 {
+        font-size: 2.5em;
+        margin: 16vh auto 5vh;
+    }
+}
+
+@media (min-width: 801px) {
+
+    #heroContainer img{
+        background-image: url(media/img/backgroundDesktop.jpg);
+    }
+
+    #userImg {
+        width: 150px;
+        height: 155px;
+        filter: blur(0.5rem);
+    }
+
+    @keyframes logoSlide {
+        0%{
+            scale: 0;
+            filter: blur(1rem);
+        }
+        100%{
+            scale: 1.5;
+            filter: blur(0);
+        }
+    }
+    
+    #userInfo h2{
+        animation: tittleSlide 1.8s;
+
+    }
+
+    @keyframes tittleSlide {
+        from{
+            transform: translateX(-1400px);
+            filter: blur(1.5rem);
+        }
+        to{
+            transform: translateX(0);
+            filter: blur(0);
+        }
+    }
+
+    #userInfo h3 {
+        font-size: 1.2em;
+        animation: textSlide 2s ease;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes textSlide {
+        0%{
+            transform: translateX(1400px);
+            filter: blur(1.5rem);
+        }
+        80%{
+            transform: translateX(0);
+            filter: blur(0);
+        }
+    }
+
+    
+    #contact {
+    margin: 8vh 10rem 25vh;
+    }
+
+    #contact:hover{
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    #contact ul li {
+        padding: 0 30px;
+    }
+
+    #contact h2{
+        font-size: 1.6em;
+    }
+
+    #contact h3{
+        font-size: 1.4em;
+        padding: 10px 15px;
+        margin-top: 0;
+    }
+
+    #mediosDePago{
+        font-size: 0.5em;
+
+        margin: -4rem 0 10rem;
+    }
+
+    .igContact{
+        height: 20vh;
+    }
+
+    .igContact h2{
+        padding: 10px 1rem;
+    }
+
+    .glassContainerIg{
+        margin-top: 0;
+    }
+
+    .productImg {
+        width: 240px;
+        height: 270px;
+    }
+
+    #productsContainer{
+        margin-top: 10vh;
+        height: 25vh;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+    }
+
+    .productItem {
+        width: 28%;
+        height: 450px;
+        margin: 0 10px;
+
+        display: inline-block;
+        flex-flow: column wrap;
+    }
+
+    #productTittle{
+        font-size: 1.5em;
+    }
+
+    .productItem a{
+    
+        width: 100px;
+        height: 50px;
+    
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 5px auto;
+        transition: .5s;
+    }
+
+    .productItem a:hover{
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: 1s;
+    }
+
+    #footerContainer {
+        margin-top: 20rem;
+    }
+
+    #footerContainer h1{
+        transition: .5s;
+    }
+
+    #footerContainer h1:hover{
+        color: #f9f9f9;
+        transform: rotate(-14deg);
+        transition: 1s;
+    }
+
+}
